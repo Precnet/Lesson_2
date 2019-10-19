@@ -11,7 +11,8 @@ def get_user_input
   print 'Input month: '
   month = gets.chomp.to_i
   print 'Input year: '
-  year = pets.chomp.to_i
+  year = gets.chomp.to_i
+  create_year(day, month, year)
 end
 
 def create_year(day, month, year)
@@ -30,3 +31,5 @@ end
 def get_ordinal(day, month, days_per_month)
   day + days_per_month[0..month-1].sum
 end
+
+p get_ordinal_number_of_date(get_user_input)
