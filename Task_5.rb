@@ -25,6 +25,7 @@ end
 
 def get_ordinal_number_of_date(year)
   days_per_month = is_leap?(year[:year]) ? DAYS_PER_MONTH_LEAP : DAYS_PER_MONTH_STANDARD
+  # -1 for index translation, -1 for previous month
   month_index = year[:month] - 2
   year[:day] + calculate_previous_months_sum(month_index, days_per_month)
 end
