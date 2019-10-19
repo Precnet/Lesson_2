@@ -20,12 +20,12 @@ def create_year(day, month, year)
 end
 
 def is_leap?(current_year)
-  current_year[:year] % 4 == 0 && current_year[:year] % 100 != 0 && current_year[:year] % 400 != 0
+  current_year % 4 == 0 && current_year % 100 != 0 && current_year % 400 != 0
 end
 
-def get_ordinal_number_of_date(current_year)
-  days_per_month = DAYS_PER_MONTH_LEAP ? is_leap?(current_year[:year]) : DAYS_PER_MONTH_STANDARD
-  get_ordinal(current_year[:day], current_year[:month], days_per_month)
+def get_ordinal_number_of_date(year)
+  days_per_month = DAYS_PER_MONTH_LEAP ? is_leap?(year[:year]) : DAYS_PER_MONTH_STANDARD
+  get_ordinal(year[:day], year[:month], days_per_month)
 end
 
 def get_ordinal(day, month, days_per_month)
