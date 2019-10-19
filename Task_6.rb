@@ -1,6 +1,6 @@
 STOP = 'stop'
 
-def fill_the_basket(basket)
+def fill_basket(basket)
   while true
     user_input = get_input
     break if is_stop? user_input
@@ -27,6 +27,9 @@ def add_purchase_to_basket(basket, purchase)
   basket[purchase[0]] = purchase[1]
 end
 
+def print_basket
+
+end
+
 basket = {}
-fill_the_basket basket
-p basket
+fill_basket basket
