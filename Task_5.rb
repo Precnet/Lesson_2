@@ -25,11 +25,19 @@ end
 
 def get_ordinal_number_of_date(year)
   days_per_month = is_leap?(year[:year]) ? DAYS_PER_MONTH_LEAP : DAYS_PER_MONTH_STANDARD
-  get_ordinal(year[:day], year[:month], days_per_month)
+  month_index = year[:month] - 2
+  year[:day] + calculate_previous_months_sum(month_index, days_per_month)
 end
 
-def get_ordinal(day, month, days_per_month)
-  day + days_per_month[0..month-1].sum
+def calculate_previous_months_sum(month_index, days_per_month)
+  case
+  when month_index < 0
+    0
+  when month_index == 0
+    days_per_month[month_index]
+  else
+    days_per_month[0..month_index].sum
+  end
 end
 
 p get_ordinal_number_of_date(get_user_input)
