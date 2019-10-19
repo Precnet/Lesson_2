@@ -22,7 +22,7 @@ def is_leap?(current_year)
   current_year[:year] % 4 == 0 && current_year[:year] % 100 != 0 && current_year[:year] % 400 != 0
 end
 
-def get_ordinal_number_of_day(year, day)
+def get_ordinal_number_of_date(year)
   days_per_month = DAYS_PER_MONTH_LEAP ? is_leap?(year[:year]) : DAYS_PER_MONTH_STANDARD
   get_ordinal(year[:day], year[:month], days_per_month)
 end
