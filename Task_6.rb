@@ -27,9 +27,12 @@ def add_purchase_to_basket(basket, purchase)
   basket[purchase[0]] = purchase[1]
 end
 
-def print_basket
-
+def print_basket(basket)
+  puts ' Your basket contains:'
+  print basket
 end
 
 basket = {}
 fill_basket basket
+
+print_basket(basket)
