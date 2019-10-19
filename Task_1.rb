@@ -8,6 +8,8 @@ def create_months
   MONTHS_NAMES.zip(MONTHS_LENGTH_IN_DAYS).to_h
 end
 
-def print_months_by_days(months, days_in_month = 30)
-  months.each {|month| month if months[month] == days_in_month}
+def get_months_by_days(months, days_in_month = 30)
+  months.select {|month| months[month] == days_in_month}
 end
+
+print get_months_by_days(create_months)
