@@ -33,9 +33,9 @@ end
 
 def print_basket_report(basket)
   report_data = prepare_report_data basket
-  puts 'Total price per position:'
-  report_data.each_key {|key| puts "#{key}: \t#{report_data[key]}" }
-  puts 'Total price:'
+  puts "\nTotal price per position:"
+  report_data.each_key {|key| puts "#{key}: \t\t#{report_data[key]}" }
+  puts "\nTotal price:"
   puts report_data.values.sum
 end
 
