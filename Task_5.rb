@@ -5,6 +5,15 @@
 DAYS_PER_MONTH_STANDARD = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 DAYS_PER_MONTH_LEAP = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
+def get_user_input
+  print 'Input day: '
+  day = gets.chomp.to_i
+  print 'Input month: '
+  month = gets.chomp.to_i
+  print 'Input year: '
+  year = pets.chomp.to_i
+end
+
 def create_year(day, month, year)
   {day: day, month: month, year: year}
 end
