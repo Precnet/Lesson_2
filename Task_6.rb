@@ -28,8 +28,13 @@ def add_purchase_to_basket(basket, purchase)
 end
 
 def print_basket(basket)
-  puts ' Your basket contains:'
-  print basket
+  puts 'Your purchases (name, price, amount, total):'
+  basket.each_key { |key| print_element(key, basket[key]) }
+  puts "Total price: #{basket.values.each { |price, amount| }}"
+end
+
+def print_element(product_name, data)
+  puts "#{product_name}\t#{data[0]}\t\t#{data[1]}\t#{data[0] * data[1]}"
 end
 
 basket = {}
